@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หอหญิง หอ 11</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      margin: 0;
+      background-color: #fdf6ec;
+      color: #003366;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logout-btn {
+      background-color: #fdd9a0;
+      color: #003366;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .no-room {
+      text-align: center;
+      font-size: 20px;
+      color: #cc0000;
+      background-color: #ffe6e6;
+      border: 1px solid #ffcccc;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 0 30px;
+    }
+    .footer-contact {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #eaf4ff;
+      border: 1px solid #c0d7f0;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div><h3>🏢 หอหญิง หอ 11</h3></div>
+    <div class="user-info">
+      <i class="fa fa-user-circle"></i> example@email.com
+      <button class="logout-btn" onclick="window.location.href='index.html'">ออกจากระบบ</button>
+    </div>
+  </header>
+
+<!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+ 
+
+  <h2>สถานะห้องพัก</h2>
+
+  <div class="no-room">
+    ❌ ขออภัย ขณะนี้ไม่มีห้องว่างสำหรับการจองในหอหญิง หอ 11
+  </div>
+
+  <div class="footer-contact">
+    <strong>CONTACT US</strong><br>
+    📍 199 M.9 Lumsum Kanchanaburi - Sangkraburi Road<br>
+    Sai Yok, Sai Yok District, Kanchanaburi<br>
+    📧 Campusride@gmail.com<br>
+    📞 092-901-6071
+  </div>
+
+</body>
+</html>

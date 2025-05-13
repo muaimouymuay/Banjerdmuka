@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bookworktime | CampusRIDE+</title>
+  <style>
+    body {
+      margin: 0;
+      font-style: 'prompt';
+      background-color: #fdf5e6;
+      color: #003366;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .user-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info {
+      margin-left: 10px;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .user-info span {
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 18px;
+    }
+
+    .logout {
+      background-color: white;
+      color: #003366;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 15px;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="date"],
+    input[type="time"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #003366;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #002244;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 80px;
+    }
+
+    @media (max-width: 480px) {
+      h2 { font-size: 24px; }
+      button { font-size: 14px; }
+      .user-info { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div></div> <!-- Placeholder -->
+    <div class="user-section">
+      <div class="user-info">
+        <span>👤 </span>Profile : Madee Sandee<br>
+        example@gmail.com
+      </div>
+      <a href="index.html" class="logout">LOG OUT</a>
+    </div>
+  </header>
+
+
+  <!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+  <div class="container">
+    <h2>📅 จองเวลาทำงานผู้ขับขี่</h2>
+    <form onsubmit="validateAndSubmit(event)">
+      <label for="work-date">เลือกวันที่ต้องการทำงาน:</label>
+      <input type="date" id="work-date" name="work-date" required>
+
+      <label for="start-time">เวลาเริ่มต้น:</label>
+      <input type="time" id="start-time" name="start-time" required>
+
+      <label for="end-time">เวลาสิ้นสุด (ไม่เกิน 12 ชม.):</label>
+      <input type="time" id="end-time" name="end-time" required>
+
+      <button type="submit">จองเวลาทำงาน</button>
+    </form>
+
+    <div class="image-container">
+      🚗
+    </div>
+  </div>
+
+  <script>
+    function validateAndSubmit(e) {
+      e.preventDefault();
+
+      const start = document.getElementById('start-time').value;
+      const end = document.getElementById('end-time').value;
+
+      const startTime = new Date(`1970-01-01T${start}:00`);
+      const endTime = new Date(`1970-01-01T${end}:00`);
+
+      const diff = (endTime - startTime) / (1000 * 60 * 60); // ชั่วโมง
+
+      if (diff <= 0) {
+        alert("เวลาเริ่มต้นต้องมาก่อนเวลาสิ้นสุด");
+      } else if (diff > 12) {
+        alert("ไม่สามารถทำงานเกิน 12 ชั่วโมงต่อวันได้");
+      } else {
+        alert("ระบบได้รับคำขอจองเวลาทำงานแล้ว! จะมีอีเมลแจ้งเตือนเมื่อมีคนต้องการคุณ");
+        window.location.href = "Drivestime.html"; // เปลี่ยนเส้นทางได้ตามจริง
+      }
+    }
+  </script>
+
+</body>
+</html>

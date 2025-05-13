@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>DeliveryTracking | CampusRIDE+</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #003366;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-right span {
+      margin-left: 5px;
+    }
+
+    .logout-btn {
+      background-color: #ffdddd;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .track-box {
+      background-color: #fff;
+      border: 2px solid #ccd9ff;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .track-box h2 {
+      margin-bottom: 20px;
+      color: #00264d;
+    }
+
+    .track-box button {
+      background-color: #004080;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .track-box button:hover {
+      background-color: #003366;
+    }
+
+    .footer-contact {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #e6f0ff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #003366;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .footer-contact i {
+      margin-right: 6px;
+      color: #3366cc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <i class="fas fa-box-open"></i> ติดตามของที่รับหิ้ว
+    </div>
+    <div class="header-right">
+      <div><i class="fas fa-user-circle"></i> <span>example@gmail.com</span></div>
+      <button class="logout-btn" onclick="location.href='index.html'"><i class="fas fa-sign-out-alt"></i> LOG OUT</button>
+    </div>
+  </header>
+
+<!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+  <div class="container">
+    <div class="track-box">
+      <h2><i class="fas fa-truck"></i> สถานะการรับหิ้ว</h2>
+      <p>เมื่อได้รับของที่ฝากหิ้วเรียบร้อยแล้ว กรุณากดปุ่มด้านล่าง</p>
+      <button onclick="confirmReceived()">รับของเสร็จสิ้นแล้ว</button>
+    </div>
+  </div>
+
+  <div class="footer-contact">
+    <div><i class="fas fa-map-marker-alt"></i> 199 M.9 Lumsum Kanchanaburi - Sangkraburi Road</div>
+    <div><i class="fas fa-map-pin"></i> Sai Yok, Sai Yok District, Kanchanaburi</div>
+    <div><i class="fas fa-envelope"></i> Campusride@gmail.com</div>
+    <div><i class="fas fa-phone"></i> 092-901-6071</div>
+  </div>
+
+  <script>
+    function confirmReceived() {
+      alert("ขอบคุณสำหรับความไว้วางใจเรา🙏 อย่าลืมประเมิน!");
+      window.location.href = "rating.html";
+    }
+  </script>
+</body>
+</html>

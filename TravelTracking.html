@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelTracking | CampusRIDE+</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Prompt", sans-serif;
+      background-color: #fef8ec;
+      color: #003366;
+      text-align: center;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #003366;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logout-btn {
+      background-color: #fafafb;
+      color: #003366;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-top: 60px;
+      padding: 30px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border: 2px dashed #cd628d;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #99ccff;
+      color: #003366;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #6699ff;
+      color: white;
+    }
+
+    .emergency {
+      background-color: #ffdddd;
+      border-left: 5px solid red;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      border-radius: 15px;
+    }
+
+    .emergency h3 {
+      color: #cc0000;
+      margin-top: 0;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #4e3007;
+      margin: 6px 0;
+      border-radius: 2px;
+    }
+
+    .nav-drawer {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #ebd5c8;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+    }
+
+    .nav-drawer a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #003366;
+      display: block;
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    .nav-drawer a:hover {
+      background-color: #ddd;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      color: #003366;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <button class="logout-btn" onclick="window.location.href='index.html'">LOG OUT</button>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div id="navDrawer" class="nav-drawer">
+    <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+    <a href="services.html">🏠 บริการทั้งหมด</a>
+    <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+    <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+    <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+    <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+    <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+    <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+    <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+    <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+    <a href="payment.html">💳 การชำระเงิน</a>
+    <a href="rating.html">⭐ การประเมินการบริการ</a>
+    <a href="muname.html">📝 บัญชีผู้ใช้</a>
+    <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+  <div class="container">
+    <div class="title">🚗 การติดตามการเดินทาง</div>
+
+    <div class="section">
+      <button class="btn" onclick="startTimer()">⏱ เริ่มจับเวลา</button>
+      <button class="btn" onclick="startGPS()">📍 ติดตาม GPS</button>
+      <div id="status" style="margin-top: 20px; font-weight: bold;"></div>
+      <br/>
+      <button class="btn" onclick="window.location.href='rating.html'">✅ เสร็จสิ้นการเดินทาง</button>
+    </div>
+
+    <!-- Emergency Section -->
+    <div class="emergency">
+      <h3>📞 ปุ่มฉุกเฉิน แจ้งเหตุ 24 ชั่วโมง</h3>
+      <p>กดเพื่อโทรออกโดยตรง:</p>
+      <a class="btn" href="tel:0863779948">📱 แจ้งเหตุ วิทยาเขตกาญจนบุรี</a><br><br>
+      <a class="btn" href="tel:0957366763">📱 ศูนย์รักษาความปลอดภัย ม.มหิดล กาญ</a>
+    </div>
+  </div>
+
+  <script>
+    function startTimer() {
+      document.getElementById('status').innerText = '🕒 ระบบจับเวลาเริ่มต้นแล้ว...';
+    }
+
+    function startGPS() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          document.getElementById('status').innerText = `📍 ตำแหน่งปัจจุบัน: (${lat.toFixed(5)}, ${lon.toFixed(5)})`;
+        }, () => {
+          document.getElementById('status').innerText = '❌ ไม่สามารถเข้าถึงตำแหน่ง GPS ได้';
+        });
+      } else {
+        document.getElementById('status').innerText = '❌ อุปกรณ์ไม่รองรับ GPS';
+      }
+    }
+  </script>
+</body>
+</html>

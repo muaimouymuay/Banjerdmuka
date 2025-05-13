@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banjerdcars | CampusRIDE+</title>
+  <style>
+    body {
+      margin: 0;
+      font-style: 'prompt';
+      background-color: #fdf5e6;
+      color: #003366;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px;
+      background-color: #003366;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .user-info {
+      text-align: right;
+      margin-left: 10px;
+    }
+
+    .user-info span {
+      display: block;
+      font-size: 16px;
+    }
+
+    .logout-btn {
+      background-color: white;
+      color: #003366;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+
+    .logout-btn:hover {
+      background-color: #ddd;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .option-box {
+      background-color: #fdf5e6;
+      border: 2px solid #003366;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      width: 280px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .option-box:hover {
+      transform: scale(1.05);
+    }
+
+    .option-box h3 {
+      font-size: 22px;
+      color: #003366;
+    }
+
+    @media (max-width: 600px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .option-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ส่วนหัว -->
+  <div class="header">
+    <div class="user-info">
+      <span>👤Profile: Madee Sandee</span>
+      <span>example@gmail.com</span>
+    </div>
+    <button class="logout-btn" onclick="location.href='index.html'">LOG OUT</button>
+  </div>
+
+  
+  <!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+  <!-- กล่องตัวเลือก -->
+  <div class="main-container">
+    <div class="option-box" onclick="location.href='Driver.html'">
+      <h3>ลงเวลาผู้ขับขี่</h3>
+      <p>สำหรับผู้ขับขี่เพื่อเริ่มรับงาน</p>
+    </div>
+    <div class="option-box" onclick="location.href='CallRide.html'">
+      <h3>เรียกรถรับส่ง</h3>
+      <p>สำหรับผู้ใช้งานเพื่อจองรถรับส่ง</p>
+    </div>
+ 
+
+</body>
+</html>

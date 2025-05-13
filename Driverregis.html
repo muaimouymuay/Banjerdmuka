@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Driver Regis| CampusRIDE+</title>
+  <style>
+    body {
+      font-style: 'prompt';
+      background-color: #fdf5e6;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .submit-btn {
+      margin-top: 30px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #00204d;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">สำหรับการลงทะเบียนผู้ขับขี่บรรเจิด</div>
+
+  <div class="container">
+    <h2>👉🏻ฟอร์มลงทะเบียนผู้ขับขี่👈🏻</h2>
+    <form id="driverForm">
+      <label for="licenseNumber">เลขใบขับขี่:</label>
+      <input type="text" id="licenseNumber" name="licenseNumber" required>
+
+      <label for="idCard">เลขบัตรประชาชน:</label>
+      <input type="text" id="idCard" name="idCard" required>
+
+      <label for="studentId">รหัสนักศึกษา:</label>
+      <input type="text" id="studentId" name="studentId" required>
+
+      <label for="fullname">ชื่อ-นามสกุล:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="birthdate">วันเดือนปีเกิด:</label>
+      <input type="date" id="birthdate" name="birthdate" required>
+
+      <label for="phone">เบอร์โทรศัพท์:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="email">อีเมลส่วนตัว:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="emergencyContact">ผู้ติดต่อฉุกเฉิน:</label>
+      <input type="text" id="emergencyContact" name="emergencyContact" required>
+
+      <label for="emergencyPhone">เบอร์โทรผู้ติดต่อฉุกเฉิน:</label>
+      <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+
+      <label for="address">ที่อยู่ปัจจุบัน:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="accident">เคยเกิดอุบัติเหตุหรือไม่?</label>
+      <select id="accident" name="accident" required>
+        <option value="">-- กรุณาเลือก --</option>
+        <option value="no">ไม่เคย</option>
+        <option value="yes">เคย</option>
+      </select>
+
+      <label for="accidentReason">ถ้าเคยเกิดจากอะไร?</label>
+      <textarea id="accidentReason" name="accidentReason" rows="2"></textarea>
+
+      <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("driverForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("ขอบคุณที่ลงทะเบียน🙏! กรุณารอการตรวจสอบ 3-7 วัน\nระบบจะส่งรหัสผู้ขับขี่บรรเจิดไปทางอีเมลของคุณ เพื่อเข้าสู่ระบบ");
+      window.location.href = "services.html";
+    });
+  </script>
+
+</body>
+</html>

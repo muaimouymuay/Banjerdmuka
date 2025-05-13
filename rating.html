@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Rating | CampusRIDE+</title>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      margin: 0;
+      background-color: #fffef5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      background-color: #e6f0ff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logout-btn {
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 8px 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 600px;
+      background-color: #fefefe;
+      border: 2px solid #d9e6ff;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .title {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .stars {
+      font-size: 30px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .stars span:hover,
+    .stars span.selected {
+      color: #003366;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: 'Prompt', sans-serif;
+      background-color: #fff;
+    }
+
+    .submit-btn {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #003366;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 25px;
+      background-color: #e6f0ff;
+      border-top: 2px solid #ccdfff;
+      font-size: 14px;
+      color: #003366;
+      text-align: left;
+    }
+
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #cce0ff;
+      border-radius: 15px;
+      background-color: #f9fbff;
+    }
+
+    .contact-box div {
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container, .contact-box {
+        margin: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <button class="logout-btn" onclick="window.location.href='index.html'">ออกจากระบบ</button>
+  </div>
+
+
+  <!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+  <div class="container">
+    <div class="title">🌟 กรุณาให้คะแนนความพึงพอใจ 🌟</div>
+    
+    <div class="stars" id="starRating">
+      <span data-star="1">★</span>
+      <span data-star="2">★</span>
+      <span data-star="3">★</span>
+      <span data-star="4">★</span>
+      <span data-star="5">★</span>
+    </div>
+
+    <textarea rows="4" placeholder="คุณสามารถแสดงความคิดเห็นเพิ่มเติมได้ (ไม่บังคับ)"></textarea>
+
+    <br>
+    <button class="submit-btn" onclick="submitRating()">SUBMIT</button>
+  </div>
+
+  <div class="footer">
+    <div class="contact-box">
+      <div><strong>📍:</strong> 199 M.9 Lumsum Kanchanaburi - Sangkraburi Road, Sai Yok, Sai Yok District, Kanchanaburi</div>
+      <div><strong>📧 Email:</strong> Campusride@gmail.com</div>
+      <div><strong>📞 Tel:</strong> 092-901-6071</div>
+    </div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('#starRating span');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = star.getAttribute('data-star');
+        updateStars(selectedRating);
+      });
+    });
+
+    function updateStars(rating) {
+      stars.forEach(star => {
+        if (star.getAttribute('data-star') <= rating) {
+          star.classList.add('selected');
+        } else {
+          star.classList.remove('selected');
+        }
+      });
+    }
+
+    function submitRating() {
+      if (selectedRating === 0) {
+        alert("กรุณาให้⭐️ก่อนส่ง");
+        return;
+      }
+      alert("ขอบคุณสำหรับการประเมิน🙏");
+      window.location.href = "services.html";
+    }
+  </script>
+
+  <!-- <script>
+    function submitRating() {
+      alert("ขอบคุณสำหรับการประเมิน");
+      window.location.href = "services.html";
+    }
+  </script> -->
+
+</body>
+</html>

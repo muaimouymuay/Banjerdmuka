@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>DeliveryBanjerd| CampusRIDE+</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info i {
+      font-size: 1.2em;
+    }
+
+    .logout-btn {
+      background: #f6f6f5;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .add-delivery {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .add-delivery button {
+      font-size: 1.2em;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border: none;
+      background: #003366;
+      color: white;
+      cursor: pointer;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background: #fff;
+      border: 2px solid #003366;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .box h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+
+    input[type="text"], input[type="number"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .options {
+      margin-top: 10px;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    .buttons button {
+      padding: 10px 15px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calculate-btn {
+      background-color: #3da728;
+      color: white;
+    }
+
+    .finish-btn {
+      background-color: #003366;
+      color: white;
+    }
+
+    .contact-box {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #ffeaa7;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 0.9em;
+      box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="left-section">
+    <i class="fas fa-store"></i> Campus Delivery
+  </div>
+  <div class="right-section">
+    <i class="fas fa-user-circle"></i> <span>Profile: example@gmail.com</span>
+    <button class="logout-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-sign-out-alt"></i> LOG OUT
+    </button>
+  </div>
+</header>
+
+<!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+ 
+
+  <div class="main">
+    <div class="add-delivery">
+      <button onclick="location.href='DeliveryECO.html'">🛍️ รับหิ้วเพิ่มเติม</button>
+    </div>
+
+    <h2>สินค้ารับหิ้ว</h2>
+
+    <!-- กล่องเซเว่น -->
+    <div class="box" id="sevenBox">
+      <h3>รับหิ้ว🏪 สินค้าเซเว่น</h3>
+      <input type="text" placeholder="ชื่อสินค้า" id="sevenItem">
+      <input type="number" placeholder="จำนวนชิ้น" id="sevenQty">
+      <textarea placeholder="รายละเอียดเพิ่มเติม"></textarea>
+      <div class="options">
+        <label><input type="checkbox" id="sevenGuarantee"> ต้องการรับประกันสินค้า (+7฿)</label>
+      </div>
+      <div class="buttons">
+        <button class="calculate-btn" onclick="calculatePrice('seven')">คำนวณราคา</button>
+        <button class="finish-btn" onclick="finishOrder('seven')">เสร็จสิ้น</button>
+      </div>
+      <p id="sevenResult"></p>
+    </div>
+
+    <!-- กล่อง KFC -->
+    <div class="box" id="kfcBox">
+      <h3>รับหิ้ว🍗 KFC</h3>
+      <input type="text" placeholder="ชื่อชุดอาหาร" id="kfcItem">
+      <input type="number" placeholder="จำนวนชุด" id="kfcQty">
+      <textarea placeholder="รายละเอียดเพิ่มเติม"></textarea>
+      <div class="options">
+        <label><input type="checkbox" id="kfcGuarantee"> ต้องการรับประกันสินค้า (+7฿)</label>
+      </div>
+      <div class="buttons">
+        <button class="calculate-btn" onclick="calculatePrice('kfc')">คำนวณราคา</button>
+        <button class="finish-btn" onclick="finishOrder('kfc')">เสร็จสิ้น</button>
+      </div>
+      <p id="kfcResult"></p>
+    </div>
+
+    <!-- กล่อง CJ More -->
+    <div class="box" id="cjBox">
+      <h3>รับหิ้ว🍽️ CJ More</h3>
+      <input type="text" placeholder="ชื่อสินค้า" id="cjItem">
+      <input type="number" placeholder="จำนวนชิ้น" id="cjQty">
+      <textarea placeholder="รายละเอียดเพิ่มเติม"></textarea>
+      <div class="options">
+        <label><input type="checkbox" id="cjGuarantee"> ต้องการรับประกันสินค้า (+7฿)</label>
+      </div>
+      <div class="buttons">
+        <button class="calculate-btn" onclick="calculatePrice('cj')">คำนวณราคา</button>
+        <button class="finish-btn" onclick="finishOrder('cj')">เสร็จสิ้น</button>
+      </div>
+      <p id="cjResult"></p>
+    </div>
+
+    <!-- กล่องตลาด -->
+    <div class="box" id="marketBox">
+      <h3>รับหิ้ว🥕 สินค้าตลาดทั่วไป</h3>
+      <input type="text" placeholder="ชื่อสินค้า" id="marketItem">
+      <input type="number" placeholder="จำนวนชิ้น" id="marketQty">
+      <textarea placeholder="รายละเอียดเพิ่มเติม"></textarea>
+      <div class="options">
+        <label><input type="checkbox" id="marketGuarantee"> ต้องการรับประกันสินค้า (+7฿)</label>
+      </div>
+      <div class="buttons">
+        <button class="calculate-btn" onclick="calculatePrice('market')">คำนวณราคา</button>
+        <button class="finish-btn" onclick="finishOrder('market')">เสร็จสิ้น</button>
+      </div>
+      <p id="marketResult"></p>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <strong>CONTACT US:</strong><br>
+    199 M.9 Lumsum Kanchanaburi - Sangkraburi Rd.<br>
+    Sai Yok, Sai Yok District, Kanchanaburi<br>
+    Email: Campusride@gmail.com<br>
+    โทร: 092-901-6071
+  </div>
+
+  <script>
+    function calculatePrice(type) {
+      const qty = parseInt(document.getElementById(type + 'Qty').value) || 0;
+      const guarantee = document.getElementById(type + 'Guarantee').checked;
+      let price = 0;
+
+      if (type === 'seven' || type === 'cj') {
+        if (qty <= 5) price = 20;
+        else if (qty <= 10) price = 20 + (qty - 5) * 3;
+        else price = 20 + (5 * 3) + (qty - 10) * 2;
+      }
+      else if (type === 'kfc') {
+        if (qty <= 2) price = 20;
+        else price = 20 + (qty - 2) * 10;
+      }
+      else if (type === 'market') {
+        if (qty <= 2) price = 20;
+        else price = 20 + (qty - 2) * 5;
+      }
+
+      if (guarantee) price += 7;
+
+      document.getElementById(type + 'Result').innerText = 'ราคาค่าหิ้ว: ' + price + ' บาท';
+    }
+
+    function finishOrder(type) {
+      alert("รายละเอียดฝากหิ้วถูกส่งไปที่ผู้รับหิ้วเรียบร้อย\nสามารถเช็ครายละเอียดได้ที่อีเมล");
+      window.location.href = "payment.html";
+    }
+  </script>
+</body>
+</html>

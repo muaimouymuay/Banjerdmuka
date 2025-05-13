@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Banjerd | CampusRIDE+</title>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 15px 20px;
+      gap: 15px;
+    }
+    header span {
+      font-size: 16px;
+    }
+    .logout-button {
+      background-color: #ffffff;
+      color: #003366;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #003366;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .contact-box {
+      background-color: #ebd5c8;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .contact-box p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .policy {
+      margin-top: 40px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .policy h2 {
+      color: #023e8a;
+      margin-bottom: 20px;
+    }
+    .policy ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .policy li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="logout-button" onclick="window.location.href='index.html'">LOG OUT</button>
+  </header>
+
+<!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+  <main>
+    <h1>📍 CONTACT US</h1>
+    <div class="contact-box">
+      <p>📍 199 M.9 Lumsum Kanchanaburi - Sangkraburi Road Sai Yok, Sai Yok District, Kanchanaburi</p>
+      <p>📧 Email: Campusride@gmail.com</p>
+      <p>📞 Tel: 092-901-6071</p>
+      <p>📷 Instagram: Banjerdcampusride</p>
+    </div>
+
+    <div class="policy">
+      <h2>🛡️ นโยบายความปลอดภัย</h2>
+      <h3>สำหรับคนขับ</h3>
+      <ul>
+        <li>- ขับขี่ปลอดภัยตามกฎจราจร ห้ามขับเร็วเกินกำหนด</li>
+        <li>- รับผู้โดยสาร 1 คนต่อครั้ง (มอเตอร์ไซค์)</li>
+        <li>- สวมหมวกกันน็อค และมีสำรองสำหรับผู้โดยสาร</li>
+        <li>- แสดงบัตร/แอปฯ ยืนยันตัวตนก่อนให้บริการ</li>
+        <li>- ห้ามละเมิดสิทธิ เช่น พูดจาไม่เหมาะสม แตะเนื้อต้องตัว</li>
+      </ul>
+      <h3>สำหรับผู้โดยสาร</h3>
+      <ul>
+        <li>- สวมหมวกกันน็อคทุกครั้ง</li>
+        <li>- ใช้บริการผ่านเว็บไซต์เท่านั้น ห้ามเรียกนอกระบบ</li>
+      </ul>
+      <h3>ความปลอดภัยบนเว็บไซต์</h3>
+      <ul>
+        <li>- ประกันอุบัติเหตุทั้งคนขับและผู้โดยสาร</li>
+        <li>- ปุ่มฉุกเฉินแจ้งเหตุ 24 ชม.</li>
+        <li>- ติดต่อฉุกเฉิน: วิทยาเขตกาญจนบุรี 086-377-9948</li>
+        <li>- ศูนย์รักษาความปลอดภัย ม.มหิดล กาญ: 095-736-6763</li>
+        <li>- แชร์ตำแหน่งแบบเรียลไทม์</li>
+        <li>- ระบบรีวิวคนขับ</li>
+        <li>- มีสัญลักษณ์ตรวจสอบคนขับผ่านแล้ว</li>
+      </ul>
+    </div>
+  </main>
+
+</body>
+</html>

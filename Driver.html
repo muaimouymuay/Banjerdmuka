@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Loing | CampusRIDE+</title>
+  <style>
+    body {
+      font-style: 'prompt';
+      margin: 0;
+      background-color: #fdf5e6;
+      color: #003366;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid #003366;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #003366;
+      border-radius: 5px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .buttons button {
+      flex: 1;
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .buttons button:hover {
+      background-color: #005599;
+    }
+
+    @media (max-width: 480px) {
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="clover-background">
+  <span class="clover clover-top-left">☘️</span>
+  <span class="clover clover-top-right">☘️</span>
+  <span class="clover clover-bottom-left">☘️</span>
+  <span class="clover clover-bottom-right">☘️</span>
+</div>
+
+  <h1>DRIVER LOGIN</h1>
+
+  <div class="login-box">
+    <form action="Drivestime.html" method="GET">
+      <label for="driverID">รหัสผู้ขับขี่บรรเจิด:</label>
+      <input type="text" id="driverID" name="driverID" placeholder="สามารถดูรหัสได้ในอีเมลที่ลงทะเบียนไว้"required>
+
+      <label for="password">รหัสผ่าน:</label>
+      <input type="password" id="password" name="password" placeholder="รหัสผ่านตนเอง" required>
+
+      <label for="photo">ยืนยันตัวตน (อัปโหลดรูปถ่าย ณ เวลานี้):</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+
+      <div class="buttons">
+        <button type="submit">LOGIN</button>
+        <button type="button" onclick="location.href='Driverregis.html'">REGISTER</button>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>

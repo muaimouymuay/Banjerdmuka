@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>รับหิ้วเพิ่มเติม | CampusRIDE+</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #f7f9fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fcfdff;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      font-size: 1.2em;
+    }
+
+    .right-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logout-btn {
+      background-color: #fffdfd;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #e6f2ff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px;
+      width: 100%;
+      background-color: #004080;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .contact-box {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #fff8dc;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-size: 0.9em;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .contact-box i {
+      margin-right: 5px;
+      color: #004080;
+    }
+
+    #otherTypeBox {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header style="background-color: #004080; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+  <div style="font-size: 1.2em;">
+    <i class="fas fa-box-open"></i> รับหิ้วเพิ่มเติม
+  </div>
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      
+     <!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+ 
+
+    </div>
+    <button onclick="location.href='index.html'" style="background-color: #004080; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+      <i class="fas fa-sign-out-alt"></i> LOG OUT
+    </button>
+  </div>
+</header>
+
+<div class="container">
+  <h2><i class="fas fa-clipboard-list"></i>แบบฟอร์มรับหิ้วเพิ่มเติม</h2>
+
+  <label for="type">ประเภทของที่รับหิ้ว</label>
+  <select id="type" onchange="checkOtherType()">
+    <option>ของใช้</option>
+    <option>อาหาร</option>
+    <option>ของสด</option>
+    <option>น้ำ</option>
+    <option>ปากกา</option>
+    <option>ตุ๊กตา</option>
+    <option>หนังสือ</option>
+    <option>สติ๊กเกอร์</option>
+    <option>ครีม</option>
+    <option>กระเป๋า</option>
+    <option value="อื่นๆ">อื่นๆ</option>
+  </select>
+
+  <div id="otherTypeBox">
+    <label for="otherType">กรุณาระบุประเภทอื่นๆ</label>
+    <input type="text" id="otherType" placeholder="ระบุประเภทของสินค้าที่ต้องการรับหิ้ว">
+  </div>
+
+  <label>วันที่รับหิ้ว (เช่น 12 พ.ค. - 14 พ.ค.)</label>
+  <input type="text">
+
+  <label>เวลาที่รับหิ้ว</label>
+  <input type="text">
+
+  <label>รายละเอียดสินค้าเพิ่มเติม</label>
+  <textarea rows="4"></textarea>
+
+  <button onclick="submitForm()">SUBMIT</button>
+</div>
+
+<div class="contact-box">
+  <div><i class="fas fa-map-marker-alt"></i> 199 M.9 Sai Yok, Kanchanaburi</div>
+  <div><i class="fas fa-envelope"></i> Campusride@gmail.com</div>
+  <div><i class="fas fa-phone-alt"></i> 092-901-6071</div>
+</div>
+
+<script>
+  function checkOtherType() {
+    const type = document.getElementById("type").value;
+    const otherBox = document.getElementById("otherTypeBox");
+    otherBox.style.display = type === "อื่นๆ" ? "block" : "none";
+  }
+
+  function submitForm() {
+    alert("ขอบคุณสำหรับการรับหิ้ว ข้อมูลที่ท่านกรอกจะขึ้นที่หน้าบริการเรียบร้อย เตรียมรับออเดอร์ได้เลย");
+    window.location.href = "DeliveryService.html";
+  }
+</script>
+
+</body>
+</html>

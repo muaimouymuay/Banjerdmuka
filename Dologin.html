@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>จองห้องพัก | CampusRIDE+</title>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #fefae0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #003366;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e3d59;
+      color: white;
+      padding: 15px 30px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .main-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 15px 60px;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border: 2px solid #1e3d59;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 650px;
+      margin-top: 20px;
+    }
+
+    label, select, input, textarea {
+      display: block;
+      margin-top: 12px;
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    select, input[type="text"], input[type="date"] {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 25px;
+      background-color: #1e3d59;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #124066;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      background-color: #e0f0ff;
+      padding: 10px 15px;
+      border: 1px solid #003366;
+      border-radius: 8px;
+      font-size: 14px;
+      align-self: flex-end;
+      margin-right: 20px;
+      margin-top: auto;
+    }
+  </style>
+
+  <script>
+    function showSection() {
+      const select = document.getElementById('actionSelect').value;
+      document.getElementById('bookingSection').style.display = select === 'room' ? 'block' : 'none';
+      document.getElementById('cleaningSection').style.display = select === 'cleaning' ? 'block' : 'none';
+    }
+
+    function showRewardFields() {
+      const reward = document.querySelector('input[name="reward"]:checked');
+      if (reward && reward.value === 'money') {
+        document.getElementById('bankInfo').style.display = 'block';
+      } else {
+        document.getElementById('bankInfo').style.display = 'none';
+      }
+    }
+
+    function submitForm(type) {
+      alert(type === 'room'
+        ? 'จองห้องพักสำเร็จ กำลังไปหน้าชำระเงิน'
+        : 'สำหรับการโอนเงินรอทำการ 7-15 วัน | AT รอทำการ 45 วัน\nหากพบปัญหาในการใช้งาน ติดต่ออีเมลได้ทันที\nกรุณาบันทึกหลักฐานไว้ด้วยค่ะ');
+      window.location.href = type === 'room' ? 'payment.html' : 'services.html';
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div><strong>ระบบจองห้องพัก / ทำความสะอาด 🛏️🧼</strong></div>
+  <div class="user-info">
+    <span>📧 example@email.com</span>
+    <a href="index.html" style="color: white;">ออกจากระบบ</a>
+  </div>
+</header>
+
+
+  <!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+<div class="main-container">
+
+  <div class="section">
+    <label for="actionSelect"><strong>กรุณาเลือกประเภทบริการ:</strong></label>
+    <select id="actionSelect" onchange="showSection()">
+      <option value="">-- เลือก --</option>
+      <option value="room">จองห้องพัก</option>
+      <option value="cleaning">จองห้องทำความสะอาด</option>
+    </select>
+  </div>
+
+  <div id="bookingSection" class="section hidden">
+    <h3>📌 จองห้องพัก</h3>
+    <label>รหัสนักศึกษา :</label ><input type="text" placeholder="66xxxxx">
+    <label>ชื่อ-สกุล (ใส่คำนำหน้าชื่อด้วยค่ะ):</label><input type="text" placeholder="นางสาวมาดี แสนดี หรือ นายแสนสุข แสนดี">
+    <label>วันเข้าพัก:</label><input type="date">
+    <label>วันออกจากห้องพัก:</label><input type="date">
+    <p><strong>เวลาบังคับออก: 14:00 น. ของวันที่ออกจากห้องพัก</strong></p>
+    <p><strong>ค่าบริการคืนละ 150 บาท กรุณาเช็คจำนวนเงินให้ดีก่อนโอน เช่น2คืน 300บาท <dl></dl>ระบบไม่มีนโยบายไม่คืนเงินท่าน มีข้อสงสัยสอบถามได้ทีอีเมล</strong></p>
+    <button onclick="submitForm('room')">SUBMIT</button>
+  </div>
+
+  <div id="cleaningSection" class="section hidden">
+    <h3>🧹 จองห้องทำความสะอาด</h3>
+    <label>เลือกห้อง:</label>
+    <select>
+      <option>หอหญิง 10 ห้อง 401</option>
+      <option>หอหญิง 10 ห้อง 405</option>
+      <option>หอหญิง 10 ห้อง 420</option>
+      <option>หอหญิง 10 ห้อง 427</option>
+      <option>หอชาย 8-9 ห้อง 202</option>
+      <option>หอชาย 8-9 ห้อง 205</option>
+      <option>หอชาย 8-9 ห้อง 210</option>
+      <option>หอชาย 8-9 ห้อง 211</option>
+    </select>
+    <label>ชื่อ-นามสกุล:</label><input type="text" placeholder="นางสาวมาดี แสนดี หรือนายแสนสุข แสนดี">
+    <label>รหัสนักศึกษา:</label><input type="text" placeholder="66xxxxx">
+    <label>คณะ:</label><input type="text" placeholder="คณะวิทยาเขตกาญจนบุรี">
+
+    <p><strong>สิ่งที่ต้องการแลก:</strong></p>
+    <label><input type="radio" name="reward" value="money" onclick="showRewardFields()"> แลกเงิน 40 บาท/1ห้อง</label>
+    <label><input type="radio" name="reward" value="at" onclick="showRewardFields()"> แลกชั่วโมงจิตอาสา AT 3 ชั่วโมง/1ห้อง</label>
+
+    <div id="bankInfo" class="hidden">
+      <label>เลขบัญชี:</label><input type="text">
+      <label>ธนาคาร:</label><input type="text" placeholder="ธนาคารกสิกร">
+      <label>ชื่อบัญชี(ต้องตรงกับชื่อธนาคาร):</label><input type="text" placeholder="นางสาวมาดี แสนดี">
+    </div>
+
+    <button onclick="submitForm('cleaning')">SUBMIT</button>
+  </div>
+</div>
+
+<footer>
+  199 M.9 Lumsum Kanchanaburi - Sangkraburi Road Sai Yok, Kanchanaburi<br>
+  Email: Campusride@gmail.com | Tel: 092-901-6071
+</footer>
+
+</body>
+</html>

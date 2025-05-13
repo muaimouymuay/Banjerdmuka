@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment | CampusRIDE+</title>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #f5f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: #003366;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info img {
+      width: 24px;
+      height: 24px;
+    }
+    .logout-button {
+      background-color: #fafbfc;
+      color: #003366;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    main {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h1 {
+      color: #023e8a;
+      margin-bottom: 20px;
+    }
+    .payment-info {
+      background-color: #ebd5c8;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 0 auto;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .payment-info img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    .upload-section input[type="file"],
+    .upload-section input[type="number"] {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #003366;
+    }
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .button-group button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button-group button:hover {
+      background-color: #0077b6;
+    }
+    .icon {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="user-info">
+  
+
+  <!-- Hamburger Menu -->
+<style>
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #4e3007;
+    margin: 6px 0;
+    border-radius: 2px;
+  }
+
+  .nav-drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ebd5c8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+
+  .nav-drawer a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-drawer a:hover {
+    background-color: #ddd;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    color: #003366;
+    cursor: pointer;
+  }
+</style>
+
+<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div id="navDrawer" class="nav-drawer">
+  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+  <a href="services.html">🏠 บริการทั้งหมด</a>
+  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+  <a href="payment.html">💳 การชำระเงิน</a>
+  <a href="rating.html">⭐ การประเมินการบริการ</a>
+  <a href="muname.html">📝 บัญชีผู้ใช้</a>
+  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
+  </div>
+
+    </div>
+    <button class="logout-button" onclick="window.location.href='index.html'">LOG OUT</button>
+  </header>
+
+  <main>
+    <h1>💸 ชำระเงิน</h1>
+    <div class="payment-info">
+      <img src="https://png.pngtree.com/png-clipart/20230815/original/pngtree-mobile-finance-icon-with-finger-clicking-and-money-vector-picture-image_10823994.png" alt="bank">
+      <p><strong>บัญชี: 4141679237 (SCB)</strong></p>
+      <p>ชื่อบัญชี: Preeyada P.</p>
+
+      <div class="upload-section">
+        <label>📷 อัปโหลดสลิปการโอนเงิน</label>
+        <input type="file" accept="image/*">
+        <label>💰 จำนวนเงินที่โอน (บาท)</label>
+        <input type="number" min="1" step="any">
+      </div>
+
+      <!-- เพิ่มใน <div class="button-group"> ภายใต้ .payment-info -->
+<div class="button-group">
+  <button onclick="window.location.href='TravelTracking.html'">
+    🚗 ชำระเงินค่าเดินทาง
+  </button>
+  <button onclick="window.location.href='DeliveryTracking.html'">
+    🛍️ ชำระเงินค่าหิ้ว
+  </button>
+  <button onclick="payDormitory()">
+    🏠 ชำระค่าห้อง
+  </button>
+</div>
+    </div>
+  </main>
+        <script>
+  function payDormitory() {
+    alert("กรุณารอสักครู่ ระบบกำลังตรวจสอบ...\nจะมีอีเมลตอบกลับเพื่อยืนยันการเข้าห้องพักเมื่อถึงที่พัก");
+  }
+</script>
+</body>
+</html>

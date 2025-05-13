@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Call Ride | CampusRIDE+</title>
+  <style>
+    body {
+      font-style: 'prompt';
+      background-color: #fef5e7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logout {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background-color: #004080;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 80px auto 40px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #004080;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .btn-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      flex: 1;
+      margin: 5px;
+    }
+
+    .price-output {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 18px;
+      color: #004080;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="logout">ออกจากระบบ</a>
+
+  <div class="container">
+    <h2>🚗 เรียกรถรับส่ง</h2>
+
+    <label for="destination">ต้องการไปที่ไหน</label>
+    <select id="destination">
+      <option value="mu">ภายในมหาวิทยาลัยมหิดล กาญจนบุรี</option>
+      <option value="wangpo">วังโพ</option>
+      <option value="mountain">เส้นทางเขาสามชั้น</option>
+      <option value="ptt">ปั๊มปตท.</option>
+      <option value="other">อื่นๆ (พิมพ์เอง)</option>
+    </select>
+
+    <input type="text" id="customDest" placeholder="พิมพ์ชื่อสถานที่เอง..." style="display:none"/>
+
+    <label for="pickup">จุดรับบริการ (คุณอยู่ที่ไหน)</label>
+    <input type="text" id="pickup" placeholder="กรอกจุดที่คุณอยู่"/>
+
+    <label for="distance">ระยะทาง (กิโลเมตร)</label>
+    <input type="number" id="distance" placeholder="เช่น 5" min="0" step="0.1"/>
+
+    <label for="vehicle">ประเภทรถ</label>
+    <select id="vehicle">
+      <option value="bike">BanjerdBike (มอเตอร์ไซค์)</option>
+      <option value="car">BanjerdCar (รถยนต์)</option>
+    </select>
+
+    <label for="people">จำนวนผู้โดยสาร</label>
+    <input type="number" id="people" placeholder="จำนวนคน" min="1" max="4"/>
+
+    <div class="btn-group">
+      <button class="btn" onclick="calculateFare()">คำนวณค่าเดินทาง</button>
+      <button class="btn" onclick="goToPayment()">ยืนยันเพื่อไปหน้าชำระเงิน</button>
+    </div>
+
+    <div class="price-output" id="fareDisplay"></div>
+  </div>
+
+  <script>
+    const destination = document.getElementById("destination");
+    const customDest = document.getElementById("customDest");
+
+    destination.addEventListener("change", function () {
+      customDest.style.display = this.value === "other" ? "block" : "none";
+    });
+
+    function calculateFare() {
+      const km = parseFloat(document.getElementById("distance").value);
+      const vehicle = document.getElementById("vehicle").value;
+
+      let fare = 0;
+      if (vehicle === "bike") {
+        fare = km <= 2 ? 10 : 10 + (km - 2) * 2;
+      } else if (vehicle === "car") {
+        fare = km <= 2 ? 40 : 40 + (km - 2) * 5;
+      }
+
+      document.getElementById("fareDisplay").innerText = `ค่าบริการประมาณ: ${fare.toFixed(2)} บาท`;
+    }
+
+    function goToPayment() {
+      const fare = document.getElementById("fareDisplay").innerText;
+      if (fare) {
+        window.location.href = "payment.html";
+      } else {
+        alert("กรุณาคำนวณค่าโดยสารก่อน!");
+      }
+    }
+  </script>
+</body>
+</html>
