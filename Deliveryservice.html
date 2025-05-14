@@ -302,7 +302,7 @@
     </div>
 
     <!-- กล่องตลาด -->
-    <div class="delivery-box">
+   <div class="delivery-box">
   <h3>สินค้า Gentle</h3>
   <p><strong>วันที่รับหิ้ว:</strong> 14 พ.ค. - 16 พ.ค.</p>
   <p><strong>เวลารับหิ้ว:</strong> 12:00 น.</p>
@@ -311,8 +311,8 @@
   <p><strong>ราคา:</strong> <span id="price">1690</span> บาท</p>
   <p><strong>ค่าหิ้วต่อใบ:</strong> <span id="fee">70</span> บาท</p>
 
-  <label for="quantity"><strong>จำนวน:</strong></label>
-  <select id="quantity" onchange="updateTotal()">
+  <label for="quantity"><strong>จำนวนที่ต้องการ:</strong></label>
+  <select id="quantity">
     <option value="1">1 ชิ้น</option>
     <option value="2">2 ชิ้น</option>
     <option value="3">3 ชิ้น</option>
@@ -320,14 +320,38 @@
     <option value="5">5 ชิ้น</option>
   </select>
 
-  <p><strong>รวมทั้งหมด:</strong> <span id="total" style="color: green; font-weight: bold;">-</span> บาท</p>
+  <p><strong>รวมทั้งสิ้น:</strong> <span id="total" style="color: green; font-weight: bold;">0</span> บาท</p>
 
-  <button onclick="calculateAndConfirm()" style="margin-top: 10px; background-color: #004080; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
-    สั่งสินค้า
+  <button onclick="calculateTotal()" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-top: 10px;">
+    คำนวณราคา
+  </button>
+
+  <button onclick="orderNow()" style="background-color: #004080; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
+    สั่งซื้อ
   </button>
 </div>
 
 <script>
+  function calculateTotal() {
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const price = parseFloat(document.getElementById("price").innerText);
+    const fee = parseFloat(document.getElementById("fee").innerText);
+    const total = (price + fee) * quantity;
+    document.getElementById("total").innerText = total.toLocaleString("th-TH");
+  }
+
+  function orderNow() {
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const price = parseFloat(document.getElementById("price").innerText);
+    const fee = parseFloat(document.getElementById("fee").innerText);
+    const total = (price + fee) * quantity;
+    alert(`คุณสั่งซื้อจำนวน ${quantity} ชิ้น รวมเป็นเงิน ${total.toLocaleString('th-TH')} บาท`);
+    window.location.href = "payment.html";
+  }
+
+  window.onload = calculateTotal;
+</script>
+
   function updateTotal() {
     const quantity = parseInt(document.getElementById("quantity").value);
     const price = parseFloat(document.getElementById('price').innerText);
