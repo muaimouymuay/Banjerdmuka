@@ -147,7 +147,6 @@
 }
 .delivery-box h3 {
   color: #004080;
-  margin-bottom: 10px;
 }
 .delivery-box p, .delivery-box label {
   font-size: 1em;
@@ -307,17 +306,17 @@
     </div>
 
     <!-- กล่องตลาด -->
-   <div class="delivery-box">
-  <h3>สินค้า Gentlewomen ผู้รับหิ้ว นางสาวฮานาน เต๊ะซา</h3>
+  <div class="delivery-box">
+  <h3>สินค้า Gentle</h3>
   <p><strong>วันที่รับหิ้ว:</strong> 14 พ.ค. - 16 พ.ค.</p>
   <p><strong>เวลารับหิ้ว:</strong> 12:00 น.</p>
   <p><strong>รายละเอียดสินค้า:</strong> กระเป๋า Gentle Woman Suede Ballerina Bag</p>
   <p><strong>สีที่มี:</strong> Brown / Dark Brown / Grey / Red</p>
-  <p><strong>ราคา:</strong> <span id="price">1690</span> บาท</p>
-  <p><strong>ค่าหิ้วต่อใบ:</strong> <span id="fee">50</span> บาท</p>
+  <p><strong>ราคา:</strong> <span id="gentle-price">1690</span> บาท</p>
+  <p><strong>ค่าหิ้วต่อใบ:</strong> <span id="gentle-fee">70</span> บาท</p>
 
-  <label for="quantity"><strong>จำนวนที่ต้องการ:</strong></label>
-  <select id="quantity">
+  <label for="gentle-qty"><strong>จำนวนที่ต้องการ:</strong></label>
+  <select id="gentle-qty">
     <option value="1">1 ชิ้น</option>
     <option value="2">2 ชิ้น</option>
     <option value="3">3 ชิ้น</option>
@@ -325,18 +324,38 @@
     <option value="5">5 ชิ้น</option>
   </select>
 
-  <p><strong>รวมทั้งสิ้น:</strong> <span id="total" style="color: green; font-weight: bold;">0</span> บาท</p>
+  <p><strong>รวมทั้งสิ้น:</strong> <span id="gentle-total" style="color: green; font-weight: bold;">0</span> บาท</p>
 
-  <button onclick="calculateTotal()" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-top: 10px;">
+  <button onclick="calculateGentleTotal()" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-top: 10px;">
     คำนวณราคา
   </button>
 
-  <button onclick="orderNow()" style="background-color: #004080; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
+  <button onclick="orderGentleNow()" style="background-color: #004080; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
     สั่งซื้อ
   </button>
 </div>
 
 <script>
+  function calculateGentleTotal() {
+    const quantity = parseInt(document.getElementById("gentle-qty").value);
+    const price = parseFloat(document.getElementById("gentle-price").innerText);
+    const fee = parseFloat(document.getElementById("gentle-fee").innerText);
+    const total = (price + fee) * quantity;
+    document.getElementById("gentle-total").innerText = total.toLocaleString("th-TH");
+  }
+
+  function orderGentleNow() {
+    const quantity = parseInt(document.getElementById("gentle-qty").value);
+    const price = parseFloat(document.getElementById("gentle-price").innerText);
+    const fee = parseFloat(document.getElementById("gentle-fee").innerText);
+    const total = (price + fee) * quantity;
+    alert(`คุณสั่งซื้อจำนวน ${quantity} ชิ้น รวมเป็นเงิน ${total.toLocaleString('th-TH')} บาท`);
+    window.location.href = "payment.html";
+  }
+
+  // เรียกคำนวณทันทีเมื่อโหลด
+  window.onload = calculateGentleTotal;
+</script>
   function calculateTotal() {
     const quantity = parseInt(document.getElementById("quantity").value);
     const price = parseFloat(document.getElementById("price").innerText);
