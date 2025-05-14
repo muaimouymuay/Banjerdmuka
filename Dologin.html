@@ -118,7 +118,7 @@
     function submitForm(type) {
       alert(type === 'room'
         ? 'จองห้องพักสำเร็จ กำลังไปหน้าชำระเงิน'
-        : 'สำหรับการโอนเงินรอทำการ 7-15 วัน | AT รอทำการ 45 วัน\nหากพบปัญหาในการใช้งาน ติดต่ออีเมลได้ทันที\nกรุณาบันทึกหลักฐานไว้ด้วยค่ะ');
+        : 'กรุณาบันทึกหลักฐานการทำความสะอาด\nระบบจะโอนเงินค่าตอบแทนภายใน 7-15 วัน | AT รอทำการ 45 วัน\nหากพบปัญหาในการใช้งานสามารถติดต่อทางอีเมลได้ทันที');
       window.location.href = type === 'room' ? 'payment.html' : 'services.html';
     }
   </script>
@@ -251,9 +251,9 @@
     <label>รหัสนักศึกษา:</label><input type="text" placeholder="66xxxxx">
     <label>คณะ:</label><input type="text" placeholder="คณะวิทยาเขตกาญจนบุรี">
 
-    <p><strong>สิ่งที่ต้องการแลก:</strong></p>
-    <label><input type="radio" name="reward" value="money" onclick="showRewardFields()"> แลกเงิน 40 บาท/1ห้อง</label>
-    <label><input type="radio" name="reward" value="at" onclick="showRewardFields()"> แลกชั่วโมงจิตอาสา AT 3 ชั่วโมง/1ห้อง</label>
+    <p><strong>กรุณาเลือกค่าตอบแทนที่ต้องการ:</strong></p>
+    <label><input type="radio" name="reward" value="money" onclick="showRewardFields()"> รับค่าบริการ 45 บาท/1ห้อง</label>
+    <label><input type="radio" name="reward" value="at" onclick="showRewardFields()"> รับชั่วโมงจิตอาสา AT 3 ชั่วโมง/1ห้อง</label>
 
     <div id="bankInfo" class="hidden">
       <label>เลขบัญชี:</label><input type="text">
