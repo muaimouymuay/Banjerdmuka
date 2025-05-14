@@ -1,8 +1,8 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>DeliveryBanjerd| CampusRIDE+</title>
+  <title>DeliveryBanjerd | CampusRIDE+</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
@@ -26,10 +26,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-
-    .user-info i {
-      font-size: 1.2em;
     }
 
     .logout-btn {
@@ -126,129 +122,133 @@
       font-size: 0.9em;
       box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
     }
+
     .order-box {
-  background-color: #f0f8ff;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.order-box h3 {
-  color: #004080;
-}
-.delivery-box {
-  background-color: #e6f2ff;
-  padding: 25px;
-  margin: 30px auto;
-  border-radius: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 600px;
-}
-.delivery-box h3 {
-  color: #004080;
-}
-.delivery-box p, .delivery-box label {
-  font-size: 1em;
-  margin: 10px 0;
-}
-.delivery-box select {
-  padding: 6px;
-  border-radius: 6px;
-  width: 100px;
-}
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .order-box h3 {
+      color: #004080;
+    }
+
+    .delivery-box {
+      background-color: #e6f2ff;
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+
+    .delivery-box h3 {
+      color: #004080;
+    }
+
+    .delivery-box p, .delivery-box label {
+      font-size: 1em;
+      margin: 10px 0;
+    }
+
+    .delivery-box select {
+      padding: 6px;
+      border-radius: 6px;
+      width: 100px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #4e3007;
+      margin: 6px 0;
+      border-radius: 2px;
+    }
+
+    .nav-drawer {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #ebd5c8;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+    }
+
+    .nav-drawer a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #003366;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .nav-drawer a:hover {
+      background-color: #ddd;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      color: #003366;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
-  <div class="left-section">
-    <i class="fas fa-store"></i> Campus Delivery
+    <div class="left-section">
+      <i class="fas fa-store"></i> Campus Delivery
+    </div>
+    <div class="right-section">
+      <i class="fas fa-user-circle"></i> <span>Profile: example@gmail.com</span>
+      <button class="logout-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-sign-out-alt"></i> LOG OUT
+      </button>
+    </div>
+  </header>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  <div class="right-section">
-    <i class="fas fa-user-circle"></i> <span>Profile: example@gmail.com</span>
-    <button class="logout-btn" onclick="window.location.href='index.html'">
-      <i class="fas fa-sign-out-alt"></i> LOG OUT
-    </button>
+
+  <div id="navDrawer" class="nav-drawer">
+    <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
+    <a href="services.html">🏠 บริการทั้งหมด</a>
+    <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
+    <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
+    <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
+    <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
+    <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
+    <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
+    <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
+    <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
+    <a href="payment.html">💳 การชำระเงิน</a>
+    <a href="rating.html">⭐ การประเมินการบริการ</a>
+    <a href="muname.html">📝 บัญชีผู้ใช้</a>
+    <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
   </div>
-</header>
-
-<!-- Hamburger Menu -->
-<style>
-  .hamburger {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1001;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    width: 30px;
-    height: 4px;
-    background-color: #4e3007;
-    margin: 6px 0;
-    border-radius: 2px;
-  }
-
-  .nav-drawer {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: #ebd5c8;
-    overflow-x: hidden;
-    transition: 0.4s;
-    padding-top: 60px;
-  }
-
-  .nav-drawer a {
-    padding: 12px 24px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #003366;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .nav-drawer a:hover {
-    background-color: #ddd;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 30px;
-    color: #003366;
-    cursor: pointer;
-  }
-</style>
-
-<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
-<div id="navDrawer" class="nav-drawer">
-  <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
-  <a href="services.html">🏠 บริการทั้งหมด</a>
-  <a href="Driver.html">🚦 เข้าสู่ระบบลงเวลาขับขี่</a>
-  <a href="Driverregis.html">🚘 การลงทะเบียนขับขี่</a>
-  <a href="CallRide.html">🚕 การเรียกรถโดยสาร</a>
-  <a href="TravelTracking.html">🚨 การติดตามการเดินทาง</a>
-  <a href="DeliveryService.html">🛍️ รายการฝากหิ้ว</a>
-  <a href="DeliveryECO.html">📦 การรับหิ้วเพิ่มเติม</a>
-  <a href="DeliveryTracking.html">🔍 การติดตามของฝากหิ้ว</a>
-  <a href="Dormitory.html">🏠 หอพักนักศึกษา</a>
-  <a href="payment.html">💳 การชำระเงิน</a>
-  <a href="rating.html">⭐ การประเมินการบริการ</a>
-  <a href="muname.html">📝 บัญชีผู้ใช้</a>
-  <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
-  </div>
- 
 
   <div class="main">
     <div class="add-delivery">
@@ -305,74 +305,36 @@
       <p id="cjResult"></p>
     </div>
 
-    <!-- กล่องตลาด -->
-  <div class="delivery-box">
-  <h3>สินค้า Gentle</h3>
-  <p><strong>วันที่รับหิ้ว:</strong> 14 พ.ค. - 16 พ.ค.</p>
-  <p><strong>เวลารับหิ้ว:</strong> 12:00 น.</p>
-  <p><strong>รายละเอียดสินค้า:</strong> กระเป๋า Gentle Woman Suede Ballerina Bag</p>
-  <p><strong>สีที่มี:</strong> Brown / Dark Brown / Grey / Red</p>
-  <p><strong>ราคา:</strong> <span id="gentle-price">1690</span> บาท</p>
-  <p><strong>ค่าหิ้วต่อใบ:</strong> <span id="gentle-fee">70</span> บาท</p>
+    <!-- กล่องสินค้า Gentle -->
+    <div class="delivery-box">
+      <h3>สินค้า Gentle</h3>
+      <p><strong>วันที่รับหิ้ว:</strong> 14 พ.ค. - 16 พ.ค.</p>
+      <p><strong>เวลารับหิ้ว:</strong> 12:00 น.</p>
+      <p><strong>รายละเอียดสินค้า:</strong> กระเป๋า Gentle Woman Suede Ballerina Bag</p>
+      <p><strong>สีที่มี:</strong> Brown / Dark Brown / Grey / Red</p>
+      <p><strong>ราคา:</strong> <span id="gentle-price">1690</span> บาท</p>
+      <p><strong>ค่าหิ้วต่อใบ:</strong> <span id="gentle-fee">70</span> บาท</p>
 
-  <label for="gentle-qty"><strong>จำนวนที่ต้องการ:</strong></label>
-  <select id="gentle-qty">
-    <option value="1">1 ชิ้น</option>
-    <option value="2">2 ชิ้น</option>
-    <option value="3">3 ชิ้น</option>
-    <option value="4">4 ชิ้น</option>
-    <option value="5">5 ชิ้น</option>
-  </select>
+      <label for="gentle-qty"><strong>จำนวนที่ต้องการ:</strong></label>
+      <select id="gentle-qty">
+        <option value="1">1 ชิ้น</option>
+        <option value="2">2 ชิ้น</option>
+        <option value="3">3 ชิ้น</option>
+        <option value="4">4 ชิ้น</option>
+        <option value="5">5 ชิ้น</option>
+      </select>
 
-  <p><strong>รวมทั้งสิ้น:</strong> <span id="gentle-total" style="color: green; font-weight: bold;">0</span> บาท</p>
+      <p><strong>รวมทั้งสิ้น:</strong> <span id="gentle-total" style="color: green; font-weight: bold;">0</span> บาท</p>
 
-  <button onclick="calculateGentleTotal()" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-top: 10px;">
-    คำนวณราคา
-  </button>
+      <button onclick="calculateGentleTotal()" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-top: 10px;">
+        คำนวณราคา
+      </button>
+      <button onclick="orderGentleNow()" style="background-color: #004080; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
+        สั่งซื้อ
+      </button>
+    </div>
+  </div>
 
-  <button onclick="orderGentleNow()" style="background-color: #004080; color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
-    สั่งซื้อ
-  </button>
-</div>
-
-<script>
-  function calculateGentleTotal() {
-    const quantity = parseInt(document.getElementById("gentle-qty").value);
-    const price = parseFloat(document.getElementById("gentle-price").innerText);
-    const fee = parseFloat(document.getElementById("gentle-fee").innerText);
-    const total = (price + fee) * quantity;
-    document.getElementById("gentle-total").innerText = total.toLocaleString("th-TH");
-  }
-
-  function orderGentleNow() {
-    const quantity = parseInt(document.getElementById("gentle-qty").value);
-    const price = parseFloat(document.getElementById("gentle-price").innerText);
-    const fee = parseFloat(document.getElementById("gentle-fee").innerText);
-    const total = (price + fee) * quantity;
-    alert(`คุณสั่งซื้อจำนวน ${quantity} ชิ้น รวมเป็นเงิน ${total.toLocaleString('th-TH')} บาท`);
-    window.location.href = "payment.html";
-  }
-
-  // เรียกคำนวณทันทีเมื่อโหลด
-  window.onload = calculateGentleTotal;
-</script>
-  function calculateTotal() {
-    const quantity = parseInt(document.getElementById("quantity").value);
-    const price = parseFloat(document.getElementById("price").innerText);
-    const fee = parseFloat(document.getElementById("fee").innerText);
-    const total = (price + fee) * quantity;
-    document.getElementById("total").innerText = total.toLocaleString("th-TH");
-  }
-
-  function orderNow() {
-    const quantity = parseInt(document.getElementById("quantity").value);
-    const price = parseFloat(document.getElementById("price").innerText);
-    const fee = parseFloat(document.getElementById("fee").innerText);
-    const total = (price + fee) * quantity;
-    alert(`คุณสั่งซื้อจำนวน ${quantity} ชิ้น รวมเป็นเงิน ${total.toLocaleString('th-TH')} บาท`);
-    window.location.href = "payment.html";
-  }
-  window.onload = calculateTotal;
   <div class="contact-box">
     <strong>CONTACT US:</strong><br>
     199 M.9 Lumsum Kanchanaburi - Sangkraburi Rd.<br>
@@ -396,13 +358,8 @@
         if (qty <= 2) price = 20;
         else price = 20 + (qty - 2) * 10;
       }
-      else if (type === 'market') {
-        if (qty <= 2) price = 20;
-        else price = 20 + (qty - 2) * 5;
-      }
 
       if (guarantee) price += 7;
-
       document.getElementById(type + 'Result').innerText = 'ราคาค่าหิ้ว: ' + price + ' บาท';
     }
 
@@ -410,6 +367,25 @@
       alert("รายละเอียดฝากหิ้วถูกส่งไปที่ผู้รับหิ้วเรียบร้อย\nสามารถเช็ครายละเอียดได้ที่อีเมล");
       window.location.href = "payment.html";
     }
+
+    function calculateGentleTotal() {
+      const quantity = parseInt(document.getElementById("gentle-qty").value);
+      const price = parseFloat(document.getElementById("gentle-price").innerText);
+      const fee = parseFloat(document.getElementById("gentle-fee").innerText);
+      const total = (price + fee) * quantity;
+      document.getElementById("gentle-total").innerText = total.toLocaleString("th-TH");
+    }
+
+    function orderGentleNow() {
+      const quantity = parseInt(document.getElementById("gentle-qty").value);
+      const price = parseFloat(document.getElementById("gentle-price").innerText);
+      const fee = parseFloat(document.getElementById("gentle-fee").innerText);
+      const total = (price + fee) * quantity;
+      alert(`คุณสั่งซื้อจำนวน ${quantity} ชิ้น รวมเป็นเงิน ${total.toLocaleString('th-TH')} บาท`);
+      window.location.href = "payment.html";
+    }
+
+    window.onload = calculateGentleTotal;
   </script>
 </body>
 </html>
