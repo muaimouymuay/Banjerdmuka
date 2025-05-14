@@ -302,16 +302,32 @@
     </div>
 
     <!-- กล่องตลาด -->
-    <div class="order-box">
+    <div class="delivery-box">
   <h3>สินค้า Gentle</h3>
   <p><strong>วันที่รับหิ้ว:</strong> 14 พ.ค. - 16 พ.ค.</p>
   <p><strong>เวลารับหิ้ว:</strong> 12:00 น.</p>
-  <p><strong>รายละเอียด:</strong> กระเป๋า Gentle Woman Suede Ballerina Bag<br>
-     สีที่มี: Brown / Dark Brown / Grey / Red</p>
-  <p><strong>ราคา:</strong> 1,690 บาท</p>
-  <p><strong>ค่าหิ้ว:</strong> 70 บาท</p>
-  <p><strong>รวมทั้งหมด:</strong> <span style="color: green; font-weight: bold;">1,760 บาท</span></p>
+  <p><strong>รายละเอียดสินค้า:</strong> กระเป๋า Gentle Woman Suede Ballerina Bag</p>
+  <p><strong>สีที่มี:</strong> Brown / Dark Brown / Grey / Red</p>
+  <p><strong>ราคา:</strong> <span id="price">1690</span> บาท</p>
+  <p><strong>ค่าหิ้ว:</strong> <span id="fee">70</span> บาท</p>
+  <p><strong>รวมทั้งหมด:</strong> <span id="total" style="color: green; font-weight: bold;">-</span> บาท</p>
+  <button onclick="calculateAndConfirm()" style="margin-top: 10px; background-color: #004080; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
+    สั่งสินค้า
+  </button>
 </div>
+
+<script>
+  function calculateAndConfirm() {
+    const price = parseFloat(document.getElementById('price').innerText);
+    const fee = parseFloat(document.getElementById('fee').innerText);
+    const total = price + fee;
+    document.getElementById('total').innerText = total.toLocaleString('th-TH');
+
+    setTimeout(() => {
+      alert("ทำการสั่งซื้อเรียบร้อยแล้ว รวมทั้งสิ้น " + total.toLocaleString('th-TH') + " บาท");
+    }, 100);
+  }
+</script>
 
   <div class="contact-box">
     <strong>CONTACT US:</strong><br>
