@@ -232,11 +232,14 @@
   }
 
   function submitForm() {
+    // ป้องกันฟอร์มส่งเอง
+    event.preventDefault();
     document.getElementById('successModal').style.display = 'block';
   }
 
   function closeModal() {
     document.getElementById('successModal').style.display = 'none';
+    // ไปหน้าหลังจาก Submit
     window.location.href = "Deliveryservice.html";
   }
 </script>
