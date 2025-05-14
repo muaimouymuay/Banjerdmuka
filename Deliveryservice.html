@@ -355,31 +355,6 @@
   }
 
   window.onload = calculateTotal;
-</script>
-
-  function updateTotal() {
-    const quantity = parseInt(document.getElementById("quantity").value);
-    const price = parseFloat(document.getElementById('price').innerText);
-    const fee = parseFloat(document.getElementById('fee').innerText);
-    const total = (price + fee) * quantity;
-    document.getElementById('total').innerText = total.toLocaleString('th-TH');
-  }
-
-  function calculateAndConfirm() {
-    const quantity = parseInt(document.getElementById("quantity").value);
-    const price = parseFloat(document.getElementById('price').innerText);
-    const fee = parseFloat(document.getElementById('fee').innerText);
-    const total = (price + fee) * quantity;
-
-    const confirmText = `ทำการสั่งซื้อจำนวน ${quantity} ชิ้น เรียบร้อยแล้ว\nรวมทั้งสิ้น ${total.toLocaleString('th-TH')} บาท`;
-
-    alert(confirmText);
-    window.location.href = "payment.html";
-  }
-
-  // อัปเดตราคาเริ่มต้นตอนโหลด
-  window.onload = updateTotal;
-</script>
 
   <div class="contact-box">
     <strong>CONTACT US:</strong><br>
