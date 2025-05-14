@@ -309,24 +309,47 @@
   <p><strong>รายละเอียดสินค้า:</strong> กระเป๋า Gentle Woman Suede Ballerina Bag</p>
   <p><strong>สีที่มี:</strong> Brown / Dark Brown / Grey / Red</p>
   <p><strong>ราคา:</strong> <span id="price">1690</span> บาท</p>
-  <p><strong>ค่าหิ้ว:</strong> <span id="fee">70</span> บาท</p>
+  <p><strong>ค่าหิ้วต่อใบ:</strong> <span id="fee">70</span> บาท</p>
+
+  <label for="quantity"><strong>จำนวน:</strong></label>
+  <select id="quantity" onchange="updateTotal()">
+    <option value="1">1 ชิ้น</option>
+    <option value="2">2 ชิ้น</option>
+    <option value="3">3 ชิ้น</option>
+    <option value="4">4 ชิ้น</option>
+    <option value="5">5 ชิ้น</option>
+  </select>
+
   <p><strong>รวมทั้งหมด:</strong> <span id="total" style="color: green; font-weight: bold;">-</span> บาท</p>
+
   <button onclick="calculateAndConfirm()" style="margin-top: 10px; background-color: #004080; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
     สั่งสินค้า
   </button>
 </div>
 
 <script>
-  function calculateAndConfirm() {
+  function updateTotal() {
+    const quantity = parseInt(document.getElementById("quantity").value);
     const price = parseFloat(document.getElementById('price').innerText);
     const fee = parseFloat(document.getElementById('fee').innerText);
-    const total = price + fee;
+    const total = (price + fee) * quantity;
     document.getElementById('total').innerText = total.toLocaleString('th-TH');
-
-    setTimeout(() => {
-      alert("ทำการสั่งซื้อเรียบร้อยแล้ว รวมทั้งสิ้น " + total.toLocaleString('th-TH') + " บาท");
-    }, 100);
   }
+
+  function calculateAndConfirm() {
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const price = parseFloat(document.getElementById('price').innerText);
+    const fee = parseFloat(document.getElementById('fee').innerText);
+    const total = (price + fee) * quantity;
+
+    const confirmText = `ทำการสั่งซื้อจำนวน ${quantity} ชิ้น เรียบร้อยแล้ว\nรวมทั้งสิ้น ${total.toLocaleString('th-TH')} บาท`;
+
+    alert(confirmText);
+    window.location.href = "payment.html";
+  }
+
+  // อัปเดตราคาเริ่มต้นตอนโหลด
+  window.onload = updateTotal;
 </script>
 
   <div class="contact-box">
