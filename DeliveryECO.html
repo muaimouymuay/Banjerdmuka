@@ -21,31 +21,6 @@
       align-items: center;
     }
 
-    .header-left {
-      font-size: 1.2em;
-    }
-
-    .right-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .user-info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .logout-btn {
-      background-color: #fffdfd;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
     .container {
       max-width: 600px;
       margin: 40px auto;
@@ -107,6 +82,58 @@
     #otherTypeBox {
       display: none;
     }
+
+    /* Hamburger & nav drawer */
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #4e3007;
+      margin: 6px 0;
+      border-radius: 2px;
+    }
+
+    .nav-drawer {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #ebd5c8;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+    }
+
+    .nav-drawer a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #003366;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .nav-drawer a:hover {
+      background-color: #ddd;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      color: #003366;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -116,68 +143,19 @@
     <i class="fas fa-box-open"></i> รับหิ้วเพิ่มเติม
   </div>
   <div style="display: flex; align-items: center; gap: 15px;">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      
-     <!-- Hamburger Menu -->
-<style>
-  .hamburger {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1001;
-    cursor: pointer;
-  }
+    <div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="user-info"></div>
+    <button onclick="location.href='index.html'" style="background-color: #004080; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+      <i class="fas fa-sign-out-alt"></i> LOG OUT
+    </button>
+  </div>
+</header>
 
-  .hamburger div {
-    width: 30px;
-    height: 4px;
-    background-color: #4e3007;
-    margin: 6px 0;
-    border-radius: 2px;
-  }
-
-  .nav-drawer {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: #ebd5c8;
-    overflow-x: hidden;
-    transition: 0.4s;
-    padding-top: 60px;
-  }
-
-  .nav-drawer a {
-    padding: 12px 24px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #003366;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .nav-drawer a:hover {
-    background-color: #ddd;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 30px;
-    color: #003366;
-    cursor: pointer;
-  }
-</style>
-
-<div class="hamburger" onclick="document.getElementById('navDrawer').style.width = '250px'">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
+<!-- เมนูซ้าย -->
 <div id="navDrawer" class="nav-drawer">
   <span class="close-btn" onclick="document.getElementById('navDrawer').style.width = '0'">&times;</span>
   <a href="services.html">🏠 บริการทั้งหมด</a>
@@ -193,18 +171,10 @@
   <a href="rating.html">⭐ การประเมินการบริการ</a>
   <a href="muname.html">📝 บัญชีผู้ใช้</a>
   <a href="ฺBanjerd.html">👩🏻‍🌾 ช่องทางการติดต่อเรา</a>
-  </div>
- 
-
-    </div>
-    <button onclick="location.href='index.html'" style="background-color: #004080; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
-      <i class="fas fa-sign-out-alt"></i> LOG OUT
-    </button>
-  </div>
-</header>
+</div>
 
 <div class="container">
-  <h2><i class="fas fa-clipboard-list"></i>แบบฟอร์มรับหิ้วเพิ่มเติม</h2>
+  <h2><i class="fas fa-clipboard-list"></i> แบบฟอร์มรับหิ้วเพิ่มเติม</h2>
 
   <label for="type">ประเภทของที่รับหิ้ว</label>
   <select id="type" onchange="checkOtherType()">
@@ -238,10 +208,20 @@
   <button onclick="submitForm()">SUBMIT</button>
 </div>
 
+<!-- กล่องติดต่อ -->
 <div class="contact-box">
   <div><i class="fas fa-map-marker-alt"></i> 199 M.9 Sai Yok, Kanchanaburi</div>
   <div><i class="fas fa-envelope"></i> Campusride@gmail.com</div>
   <div><i class="fas fa-phone-alt"></i> 092-901-6071</div>
+</div>
+
+<!-- Modal แสดงผลเมื่อกด Submit -->
+<div id="successModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.4); z-index:999;">
+  <div style="background-color:#fff; margin:15% auto; padding:20px; border-radius:10px; width:80%; max-width:400px; text-align:center;">
+    <h3>✅ ส่งข้อมูลเรียบร้อยแล้ว</h3>
+    <p>ขอบคุณสำหรับการรับหิ้ว<br>ข้อมูลของคุณจะปรากฏในหน้ารายการ</p>
+    <button onclick="closeModal()" style="margin-top: 20px; padding: 10px 20px; background-color: #004080; color: white; border: none; border-radius: 8px;">ตกลง</button>
+  </div>
 </div>
 
 <script>
@@ -252,9 +232,12 @@
   }
 
   function submitForm() {
-    alert("ขอบคุณสำหรับการรับหิ้ว ข้อมูลที่ท่านกรอกจะขึ้นที่หน้าบริการเรียบร้อย เตรียมรับออเดอร์ได้เลย");
-    <button onclick="document.getElementById('myModal').style.display='none'; window.location.href='DeliveryService.html';">Close</button>
-    window.location.href = "Deliveryservice.html";
+    document.getElementById('successModal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('successModal').style.display = 'none';
+    window.location.href = "DeliveryService.html";
   }
 </script>
 
